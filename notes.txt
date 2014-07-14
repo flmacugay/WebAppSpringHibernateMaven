@@ -1,0 +1,9 @@
+
+
+Issue: Error 400 The request sent by the client was syntactically incorrect
+Solution: @RequestParam String <xxxx> must be present in the form i.e. <input name="xxxx" />
+
+
+ 
+Issue: org.hibernate.hql.ast.QuerySyntaxException: student is not mapped [FROM student]
+Solution: Object query is case sensitive.
