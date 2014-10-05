@@ -15,18 +15,14 @@ public class Student {
 	@Id
 	@Column
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="gen")
-	@SequenceGenerator(name="gen", schema="studentdb", sequenceName="seq_studentId", allocationSize = 1, initialValue= 1)
+	@SequenceGenerator(name="gen", sequenceName="SEQ_STUDENTID", allocationSize = 1)
 	private int studentId;
-	
-	@Column
+	@Column(name="FIRST_NAME")
 	private String firstName;
-	
-	@Column
+	@Column(name="LAST_NAME")
 	private String lastName;
-	
-	@Column
+	@Column(name="YEAR_LEVEL")
 	private int yearLevel;
-	
 	
 	public Student() {
 	}
@@ -41,36 +37,25 @@ public class Student {
 	public int getStudentId() {
 		return studentId;
 	}
-	
 	public void setStudentId(int studentId) {
 		this.studentId = studentId;
 	}
-	
-	
 	public String getFirstName() {
 		return firstName;
 	}
-	
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	
-	
 	public String getLastName() {
 		return lastName;
 	}
-	
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	
-	
 	public int getYearLevel() {
 		return yearLevel;
 	}
-	
 	public void setYearLevel(int yearLevel) {
 		this.yearLevel = yearLevel;
 	}
-	
 }
