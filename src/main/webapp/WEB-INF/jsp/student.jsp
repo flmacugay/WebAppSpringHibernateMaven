@@ -40,10 +40,7 @@
 
 <br>
 
-${actionStr}
-	<c:if test="${param.actionStr != null} ">
-hahaha
-	</c:if>
+
 <table>
 	<tr>
 		<th>ID</th>
