@@ -36,7 +36,7 @@ public class StudentServiceImpl implements StudentService {
 		return studentDao.getStudent(studentId);
 	}
 
-	@Transactional
+	@Transactional(readOnly=true)
 	public List<Student> getAllStudent() {
 		return studentDao.getAllStudent();
 	}

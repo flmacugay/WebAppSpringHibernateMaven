@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ include file="/WEB-INF/jsp/includes.jsp" %>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Student Management</title>
+<title>Student Administration</title>
 </head>
 <body>
-<h1>Student Data</h1>
+<h2>Student Details</h2>
 <form:form action="student.do" method="POST" commandName="student">
 	<table>
 		<tr>
@@ -31,13 +32,18 @@
 				<input type="submit" name="action" value="add"/>
 				<input type="submit" name="action" value="edit"/>
 				<input type="submit" name="action" value="delete"/>
-				<input type="submit" name="action" value="seach"/>
+				<input type="submit" name="action" value="search"/>
 			</td>
 		</tr>
 	</table>
 </form:form>
 
 <br>
+
+${actionStr}
+	<c:if test="${param.actionStr != null} ">
+hahaha
+	</c:if>
 <table>
 	<tr>
 		<th>ID</th>
@@ -45,6 +51,7 @@
 		<th>Last Name</th>
 		<th>Year Level</th>
 	</tr>
+
 	<c:forEach items="${studentList }" var="student">
 		<tr>
 			<td>${student.studentId }</td>

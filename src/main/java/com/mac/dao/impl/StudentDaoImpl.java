@@ -32,6 +32,7 @@ public class StudentDaoImpl implements StudentDao{
 
 	@Override
 	public Student getStudent(int studentId) {
+		System.out.println("SEARCH : student id = "+studentId);
 		return (Student) session.getCurrentSession().get(Student.class, studentId);
 	}
 

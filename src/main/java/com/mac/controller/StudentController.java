@@ -30,27 +30,28 @@ public class StudentController {
 	public String doActions(@ModelAttribute Student student, BindingResult result, @RequestParam String action, ModelMap map){
 		Student studentResult=new Student();
 		switch (action) {
-		case "add":
-			studentService.add(student);
-			studentResult=student;
-			break;
-		case "edit":
-			studentService.edit(student);
-			studentResult=student;
-			break;
-		case "delete":
-			studentService.delete(student.getStudentId());
-			studentResult=student;
-			break;
-		case "search":
-			Student studentSearch=studentService.getStudent(student.getStudentId());
-			studentResult=studentSearch!=null?studentSearch:new Student();
-			break;
-		default:
-			break;
+			case "add":
+				studentService.add(student);
+				studentResult=student;
+				break;
+			case "edit":
+				studentService.edit(student);
+				studentResult=student;
+				break;
+			case "delete":
+				studentService.delete(student.getStudentId());
+				studentResult=student;
+				break;
+			case "search":
+				Student studentSearch=studentService.getStudent(student.getStudentId());
+				studentResult=studentSearch!=null?studentSearch:new Student();
+				break;
+			default:
+				break;
 		}
 		map.put("student", studentResult);
 		map.put("studentList", studentService.getAllStudent());
+		map.put("actionStr", action);
 		return "student";
 	}
 	

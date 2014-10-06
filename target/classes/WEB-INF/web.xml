@@ -9,6 +9,7 @@
 	<listener>
 		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
 	</listener>
+	
 
 	<servlet>
 		<servlet-name>spring</servlet-name>
